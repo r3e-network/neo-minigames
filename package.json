@@ -10,8 +10,8 @@
   },
   "scripts": {
     "build": "node scripts/build-all.mjs",
-    "test": "vitest run",
-    "test:conformance": "vitest run --dir apps/tests/conformance",
+    "test": "cd apps/tests && vitest run --config ../../vitest.config.ts",
+    "test:conformance": "cd apps/tests && vitest run --config ../../vitest.config.ts --dir conformance",
     "publish:cdn": "node scripts/publish-bundles-r2.mjs",
     "publish:cdn:dry-run": "node scripts/publish-bundles-r2.mjs --dry-run",
     "check:devpack-drift": "node scripts/check-devpack-drift.mjs",
