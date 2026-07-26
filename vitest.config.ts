@@ -23,7 +23,10 @@ export default defineConfig({
   test: {
     testTimeout: 30_000,
     environment: "jsdom",
-    include: ["tests/unit/**/*.test.ts", "tests/unit/**/*.test.tsx", "*/src/**/*.test.ts", "*/src/**/*.test.tsx"],
+    // Only the tests this repo's config actually owns. Apps that declare their
+    // own `test` script bring their own vitest setup (asset stubs, audio and
+    // physics shims), so those run in the app directory via `npm run test:apps`.
+    include: ["tests/unit/**/*.test.ts", "tests/unit/**/*.test.tsx"],
     // apps/tests/conformance is excluded from the default run; see
     // "test:conformance" in package.json.
     exclude: ["**/node_modules/**", "**/dist/**", "tests/conformance/**"],

@@ -15,7 +15,8 @@
     "publish:cdn": "node scripts/publish-bundles-r2.mjs",
     "publish:cdn:dry-run": "node scripts/publish-bundles-r2.mjs --dry-run",
     "check:devpack-drift": "node scripts/check-devpack-drift.mjs",
-    "build:contracts": "bash contracts/build.sh"
+    "build:contracts": "bash contracts/build.sh",
+    "test:apps": "node scripts/run-app-tests.mjs"
   },
   "dependencies": {
     "@r3e-network/neo-miniapp-framework": "^2.2.0",
