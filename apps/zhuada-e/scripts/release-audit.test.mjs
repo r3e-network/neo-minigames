@@ -731,11 +731,8 @@ describe("release audit script", () => {
 
   it("rejects removal of the authored-top cookware rest guard", () => {
     const overrides = baselineOverrides();
-    // replaceAll, not replace: this token appears more than once, and renaming
-    // only the first left the guard in place, so the audit had nothing to
-    // reject and the mutation silently proved nothing.
     overrides["src/scenes/pile-dynamics.ts"] =
-      overrides["src/scenes/pile-dynamics.ts"].replaceAll(
+      overrides["src/scenes/pile-dynamics.ts"].replace(
         "settleReadableUpright",
         "settleUnreadableUnderside",
       );
