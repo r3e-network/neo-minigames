@@ -94,9 +94,16 @@ export function createReactAppConfig(appDir: string, options: ReactAppConfigOpti
     plugins: [react(), copyNeoManifestPlugin(appDir), ...(options.plugins ?? [])],
     base: options.base ?? "./",
     resolve: {
+      dedupe: ["react", "react-dom"],
       alias: [
         ...optionAliases,
-        { find: "@", replacement: path.resolve(appDir, "src") },
+        // One React copy for both bundling and tests. The SDK packages declare
+      // react as a peer; if an install gives them a nested copy, components
+      // render against a different React than the caller and every hook fails
+      // on a null dispatcher - and a production bundle would ship React twice.
+      { find: /^react$/, replacement: path.dirname(require.resolve("react/package.json", { paths: [rootDir] })) },
+      { find: /^react-dom$/, replacement: path.dirname(require.resolve("react-dom/package.json", { paths: [rootDir] })) },
+      { find: "@", replacement: path.resolve(appDir, "src") },
         { find: "@shared", replacement: sharedDir },
         { find: "@framework", replacement: frameworkDir },
         ...polyfillAliases,
