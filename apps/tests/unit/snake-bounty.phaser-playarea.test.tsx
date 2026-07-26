@@ -236,7 +236,7 @@ describe("snake-bounty Phaser playarea", () => {
   it("keeps the score strip and secondary controls inside the centered stage shell", () => {
     const sharedRoot = process.cwd().endsWith("/apps/shared")
       ? process.cwd()
-      : resolve(process.cwd(), "apps/shared");
+      : resolve(process.cwd(), "node_modules/@r3e-network/neo-miniapp-shared");
     const styles = readFileSync(
       resolve(sharedRoot, "../snake-bounty/src/PhaserPlayArea.scss"),
       "utf8",
@@ -255,7 +255,7 @@ describe("snake-bounty Phaser playarea", () => {
   it("renders the core snake from authored sprite resources with safe motion cleanup", () => {
     const sharedRoot = process.cwd().endsWith("/apps/shared")
       ? process.cwd()
-      : resolve(process.cwd(), "apps/shared");
+      : resolve(process.cwd(), "node_modules/@r3e-network/neo-miniapp-shared");
     const scene = readFileSync(
       resolve(sharedRoot, "../snake-bounty/src/scenes/SnakeScene.ts"),
       "utf8",

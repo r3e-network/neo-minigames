@@ -5,7 +5,7 @@ import { describe, expect, it } from "vitest";
 function sharedRoot(): string {
   return process.cwd().endsWith("/apps/shared")
     ? process.cwd()
-    : resolve(process.cwd(), "apps/shared");
+    : resolve(process.cwd(), "node_modules/@r3e-network/neo-miniapp-shared");
 }
 
 describe("sudoku production PlayArea compatibility", () => {

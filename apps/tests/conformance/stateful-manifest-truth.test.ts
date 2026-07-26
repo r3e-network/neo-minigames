@@ -3,7 +3,7 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
-const appsRoot = path.resolve(process.cwd(), "..");
+const appsRoot = path.resolve(process.cwd(), "apps");
 
 function manifest(slug: string) {
   return JSON.parse(

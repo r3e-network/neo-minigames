@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 
-const APP = path.resolve(process.cwd(), "../daily-checkin");
+const APP = path.resolve(process.cwd(), "apps/daily-checkin");
 const CONTRACT = "0x25db219a701a2b23130788723fcf9a2e76857235";
 
 function read(relativePath: string): string {

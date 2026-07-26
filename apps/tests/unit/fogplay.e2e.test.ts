@@ -3,7 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 const appsRoot = process.cwd().endsWith(`${path.sep}apps${path.sep}shared`)
-  ? path.resolve(process.cwd(), "..")
+  ? path.resolve(process.cwd(), "apps")
   : path.resolve(process.cwd(), "apps");
 const source = readFileSync(
   path.join(appsRoot, "fogplay/src/composables/useCoinFlip.ts"),

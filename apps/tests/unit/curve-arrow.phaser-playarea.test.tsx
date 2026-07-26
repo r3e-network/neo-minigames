@@ -225,7 +225,7 @@ describe("curve-arrow Phaser playarea", () => {
   it("keeps the score strip and secondary controls inside the centered stage shell", () => {
     const sharedRoot = process.cwd().endsWith("/apps/shared")
       ? process.cwd()
-      : resolve(process.cwd(), "apps/shared");
+      : resolve(process.cwd(), "node_modules/@r3e-network/neo-miniapp-shared");
     const styles = readFileSync(
       resolve(sharedRoot, "../curve-arrow/src/PlayArea.scss"),
       "utf8",

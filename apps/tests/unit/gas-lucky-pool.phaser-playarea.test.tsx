@@ -161,7 +161,7 @@ function launch(url = "https://neomini.app/miniapps/gas-lucky-pool/index.html?ne
 
 function appsRoot(): string {
   return process.cwd().endsWith(`${path.sep}apps${path.sep}shared`)
-    ? path.resolve(process.cwd(), "..")
+    ? path.resolve(process.cwd(), "apps")
     : path.resolve(process.cwd(), "apps");
 }
 

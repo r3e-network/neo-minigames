@@ -161,7 +161,7 @@ function dealtState(overrides: Partial<Record<string, unknown>> = {}): Observabl
 function sceneSource(): string {
   const sharedRoot = process.cwd().endsWith("/apps/shared")
     ? process.cwd()
-    : resolve(process.cwd(), "apps/shared");
+    : resolve(process.cwd(), "node_modules/@r3e-network/neo-miniapp-shared");
   return readFileSync(
     resolve(sharedRoot, "../curve-arrow/src/scenes/CurveArrowScene.ts"),
     "utf8",

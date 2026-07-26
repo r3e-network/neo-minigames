@@ -8,7 +8,7 @@ import {
 } from "../../fogplay/src/logic/coin-motion";
 
 const sceneSource = readFileSync(
-  resolve(process.cwd(), "../fogplay/src/scenes/FogplayScene.ts"),
+  resolve(process.cwd(), "apps/fogplay/src/scenes/FogplayScene.ts"),
   "utf8",
 );
 

@@ -32,7 +32,7 @@ const SAMPLE_PILE: CardView[] = [
 
 function playAreaStyles(): string {
   const appsRoot = process.cwd().endsWith(`${path.sep}apps${path.sep}shared`)
-    ? path.resolve(process.cwd(), "..")
+    ? path.resolve(process.cwd(), "apps")
     : path.resolve(process.cwd(), "apps");
   return readFileSync(path.join(appsRoot, "sheep-solitaire/src/PlayArea.scss"), "utf8");
 }

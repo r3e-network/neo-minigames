@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 
 function appFile(file: string): string {
   const appsRoot = process.cwd().endsWith(`${path.sep}apps${path.sep}shared`)
-    ? path.resolve(process.cwd(), "..")
+    ? path.resolve(process.cwd(), "apps")
     : path.resolve(process.cwd(), "apps");
   return readFileSync(path.join(appsRoot, "gas-lucky-pool", "src", file), "utf8");
 }

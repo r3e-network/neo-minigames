@@ -7,7 +7,7 @@ import { SETTLE_GRACE_MS } from "../../jump-rush/src/logic/game-rules";
 
 function appsRoot(): string {
   return process.cwd().endsWith(`${path.sep}apps${path.sep}shared`)
-    ? path.resolve(process.cwd(), "..")
+    ? path.resolve(process.cwd(), "apps")
     : path.resolve(process.cwd(), "apps");
 }
 

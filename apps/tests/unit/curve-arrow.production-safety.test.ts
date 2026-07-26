@@ -15,7 +15,7 @@ const PLATFORM_GAME_TESTNET = "0xc75b181b4561462903bb27d8d9e0b32b637bec12";
 function appFile(relativePath: string): string {
   const sharedRoot = process.cwd().endsWith("/apps/shared")
     ? process.cwd()
-    : resolve(process.cwd(), "apps/shared");
+    : resolve(process.cwd(), "node_modules/@r3e-network/neo-miniapp-shared");
   return readFileSync(resolve(sharedRoot, `../curve-arrow/${relativePath}`), "utf8");
 }
 

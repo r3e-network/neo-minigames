@@ -105,7 +105,7 @@ function state(overrides: Partial<Record<string, unknown>> = {}): ObservableStat
 
 function appsRoot(): string {
   return process.cwd().endsWith(`${path.sep}apps${path.sep}shared`)
-    ? path.resolve(process.cwd(), "..")
+    ? path.resolve(process.cwd(), "apps")
     : path.resolve(process.cwd(), "apps");
 }
 

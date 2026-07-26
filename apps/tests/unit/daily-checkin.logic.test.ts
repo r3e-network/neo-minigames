@@ -12,7 +12,7 @@ import {
 } from "../../daily-checkin/src/daily-checkin-safety";
 import { CHECKIN_MEMO, MILESTONES } from "../../daily-checkin/src/composables/useCheckin";
 
-const APP = path.resolve(process.cwd(), "../daily-checkin");
+const APP = path.resolve(process.cwd(), "apps/daily-checkin");
 const CONTRACT = "0x25db219a701a2b23130788723fcf9a2e76857235";
 const GAS = GAS_HASH.toLowerCase();
 const ACTOR = "0x1111111111111111111111111111111111111111";

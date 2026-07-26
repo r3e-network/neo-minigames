@@ -33,7 +33,7 @@ const COMMITMENT = "ab".repeat(32);
 
 function appSource(app: string, file: string): string {
   const appsRoot = process.cwd().endsWith(`${path.sep}apps${path.sep}shared`)
-    ? path.resolve(process.cwd(), "..")
+    ? path.resolve(process.cwd(), "apps")
     : path.resolve(process.cwd(), "apps");
   return readFileSync(path.join(appsRoot, app, "src", file), "utf8");
 }

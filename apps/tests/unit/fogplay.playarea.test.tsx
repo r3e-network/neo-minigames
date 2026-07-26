@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 
 function appsRoot(): string {
   return process.cwd().endsWith(`${path.sep}apps${path.sep}shared`)
-    ? path.resolve(process.cwd(), "..")
+    ? path.resolve(process.cwd(), "apps")
     : path.resolve(process.cwd(), "apps");
 }
 

@@ -119,7 +119,7 @@ describe("Dice Game PlayArea compatibility", () => {
   it("keeps the compatibility file free of the old DOM dice stage", () => {
     const sharedRoot = process.cwd().endsWith("/apps/shared")
       ? process.cwd()
-      : resolve(process.cwd(), "apps/shared");
+      : resolve(process.cwd(), "node_modules/@r3e-network/neo-miniapp-shared");
     const source = readFileSync(
       resolve(sharedRoot, "../dice-game/src/PlayArea.tsx"),
       "utf8",

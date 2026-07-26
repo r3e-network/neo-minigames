@@ -268,7 +268,7 @@ describe("dice-game Phaser playarea", () => {
   it("keeps Phaser canvas, HUD, and secondary controls inside the full-height dice table", () => {
     const sharedRoot = process.cwd().endsWith("/apps/shared")
       ? process.cwd()
-      : resolve(process.cwd(), "apps/shared");
+      : resolve(process.cwd(), "node_modules/@r3e-network/neo-miniapp-shared");
     const styles = readFileSync(
       resolve(sharedRoot, "../dice-game/src/PlayArea.scss"),
       "utf8",

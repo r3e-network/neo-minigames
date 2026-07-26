@@ -562,7 +562,7 @@ describe("gomoku PhaserPlayArea — keyboard and screen-reader controls", () => 
   it("keeps the a11y layer visually hidden until it takes focus", () => {
     const sharedRoot = process.cwd().endsWith("/apps/shared")
       ? process.cwd()
-      : resolve(process.cwd(), "apps/shared");
+      : resolve(process.cwd(), "node_modules/@r3e-network/neo-miniapp-shared");
     const styles = readFileSync(resolve(sharedRoot, "../gomoku/src/PlayArea.scss"), "utf8");
 
     expect(styles).toContain(".gomoku-a11y-controls {");
