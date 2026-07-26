@@ -2,7 +2,7 @@
   "name": "@r3e-network/neo-minigames",
   "version": "1.0.0",
   "private": true,
-  "description": "Neo MiniGames — app sources, contracts, and the CDN publish pipeline",
+  "description": "Neo MiniGames \u2014 app sources, contracts, and the CDN publish pipeline",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "@douyinfe/semi-ui": "^2.101.0",
     "@noble/curves": "^1.2.0",
     "@noble/hashes": "^1.8.0",
-    "@r3e/neo-js-sdk": "^0.3.7",
+    "@r3e/neo-js-sdk": "https://codeload.github.com/r3e-network/neo-js-sdk/tar.gz/refs/tags/v0.3.7-r3e.1",
     "bs58": "^6.0.0",
     "cannon-es": "^0.20.0",
     "ethers": "^6.16.0",
