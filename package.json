@@ -19,8 +19,8 @@
     "test:apps": "node scripts/run-app-tests.mjs"
   },
   "dependencies": {
-    "@r3e-network/neo-miniapp-framework": "^2.2.0",
-    "@r3e-network/neo-miniapp-shared": "^2.2.0",
+    "@r3e-network/neo-miniapp-framework": "^2.2.1",
+    "@r3e-network/neo-miniapp-shared": "^2.2.1",
     "@cityofzion/neon-js": "^5.9.0",
     "@douyinfe/semi-ui": "^2.101.0",
     "@noble/curves": "^1.2.0",

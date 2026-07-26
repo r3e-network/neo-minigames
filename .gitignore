@@ -1,6 +1,9 @@
 node_modules/
 dist/
 build/
+# Compiled Neo contract artifacts are inputs, not build output: the
+# production-safety tests read them to pin the client against the ABI.
+!contracts/build/
 coverage/
 .turbo/
 *.tsbuildinfo
