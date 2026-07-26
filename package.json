@@ -1,0 +1,56 @@
+{
+  "name": "@r3e-network/neo-minigames",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Neo MiniGames — app sources, contracts, and the CDN publish pipeline",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r3e-network/neo-minigames.git"
+  },
+  "scripts": {
+    "build": "node scripts/build-all.mjs",
+    "test": "vitest run",
+    "test:conformance": "vitest run --dir apps/tests/conformance",
+    "publish:cdn": "node scripts/publish-bundles-r2.mjs",
+    "publish:cdn:dry-run": "node scripts/publish-bundles-r2.mjs --dry-run",
+    "check:devpack-drift": "node scripts/check-devpack-drift.mjs",
+    "build:contracts": "bash contracts/build.sh"
+  },
+  "dependencies": {
+    "@r3e-network/neo-miniapp-framework": "^2.2.0",
+    "@r3e-network/neo-miniapp-shared": "^2.2.0",
+    "@cityofzion/neon-js": "^5.9.0",
+    "@douyinfe/semi-ui": "^2.101.0",
+    "@noble/curves": "^1.2.0",
+    "@noble/hashes": "^1.8.0",
+    "@r3e/neo-js-sdk": "^0.3.7",
+    "bs58": "^6.0.0",
+    "cannon-es": "^0.20.0",
+    "ethers": "^6.16.0",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^0.562.0",
+    "phaser": "^3.90.0",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.169.0",
+    "vue": "^3.5.33"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^18.3.28",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^5.2.0",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^25.0.1",
+    "sass": "^1.98.0",
+    "sharp": "^0.35.3",
+    "terser": "^5.46.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.6",
+    "vite-plugin-node-polyfills": "^0.25.0",
+    "vitest": "^4.1.0"
+  }
+}

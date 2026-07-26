@@ -1,0 +1,21 @@
+node_modules/
+dist/
+build/
+coverage/
+.turbo/
+*.tsbuildinfo
+
+# .NET
+bin/
+obj/
+
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# tooling noise
+.DS_Store
+*.log
+test-results/
+playwright-report/

@@ -1,0 +1,71 @@
+{
+  "$schema": "./miniapp-config.schema.json",
+  "app_id": "miniapp-fogplay",
+  "name": "FogPlay",
+  "description": "A tactile local Phaser coin-flip table with secure streak play. Wallet-funded flips remain disabled until the Neo N3 deployment compatibility gate passes.",
+  "template_type": "gaming",
+  "category": "Gaming",
+  "tags": [
+    "fogplay",
+    "coin-flip",
+    "guest",
+    "practice"
+  ],
+  "version": "2.0.0",
+  "status": "active",
+  "developer": {
+    "name": "Yiwu",
+    "url": "https://neomini.app"
+  },
+  "contract": {
+    "template_id": "gaming-fogplay",
+    "contract_hash": "0x611c3d97dd98792a3c31a0e695704c657f143cda"
+  },
+  "entry_url": "mf://manifest?app=miniapp-fogplay",
+  "media": {
+    "icon": "/miniapp-assets/fogplay/logo.webp",
+    "banner": "/miniapp-assets/fogplay/banner.webp"
+  },
+  "permissions": {
+    "payments": false,
+    "randomness": false
+  },
+  "frontend_spec": {
+    "layout": "default",
+    "operation_panel": {
+      "title": "Free FogPlay Table",
+      "subtitle": "Pick heads or tails and flip locally. Wallet-funded GameFi remains disabled until the reviewed N3 artifact is deployed and verified.",
+      "operations": []
+    }
+  },
+  "operations": [],
+  "integration": {
+    "news_integration": true,
+    "reviews_enabled": true,
+    "forum_enabled": false,
+    "activity_feed": false,
+    "stats_display": []
+  },
+  "docs_url": "https://docs.r3e.network/fogplay",
+  "manifest": {
+    "contracts": {
+      "neo-n3-mainnet": "0x611c3d97dd98792a3c31a0e695704c657f143cda",
+      "neo-n3-testnet": "0x611c3d97dd98792a3c31a0e695704c657f143cda"
+    },
+    "contract_domains": {
+      "neo-n3-mainnet": "fogplay.miniapp.neo"
+    },
+    "platform": {
+      "analytics": true,
+      "comments": true,
+      "ratings": true,
+      "transactions": false
+    },
+    "permissions": [
+      "read:blockchain"
+    ],
+    "operation_panel": {
+      "operations": []
+    }
+  }
+}

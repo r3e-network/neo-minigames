@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.miniapp.react.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@framework/*": ["../../node_modules/@r3e-network/neo-miniapp-framework/*"],
+      "@shared/*": ["../../node_modules/@r3e-network/neo-miniapp-shared/*"]
+    },
+    "types": ["vite/client"]
+  },
+  "include": ["src"]
+}

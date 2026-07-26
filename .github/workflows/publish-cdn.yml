@@ -1,0 +1,35 @@
+name: publish-cdn
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "apps/**"
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: "Space-separated slugs to publish (empty = all)"
+        required: false
+        default: ""
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://npm.pkg.github.com
+          scope: "@r3e-network"
+      - run: npm install --no-audit --no-fund
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run build -- ${{ github.event.inputs.slugs }}
+      - run: npm run publish:cdn -- ${{ github.event.inputs.slugs }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_API_TOKEN_ID: ${{ secrets.CF_API_TOKEN_ID }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          MINIAPP_R2_BUCKET: ${{ secrets.MINIAPP_R2_BUCKET }}
+          MINIAPP_CDN_BASE_URL: ${{ secrets.MINIAPP_CDN_BASE_URL }}

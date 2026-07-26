@@ -1,0 +1,71 @@
+{
+  "$schema": "./miniapp-config.schema.json",
+  "app_id": "miniapp-dice-game",
+  "name": "Dice Game",
+  "description": "Animated local dice practice with no wallet or GAS at risk. GameFi is temporarily unavailable while the Neo N3 settlement deployment is replaced and verified.",
+  "template_type": "gaming",
+  "category": "Gaming",
+  "tags": [
+    "dice",
+    "game",
+    "guest",
+    "practice"
+  ],
+  "version": "2.0.0",
+  "status": "active",
+  "developer": {
+    "name": "Yiwu",
+    "url": "https://neomini.app"
+  },
+  "contract": {
+    "template_id": "gaming-dice",
+    "contract_hash": "0xef1fac0247ccbad5810e3fcfa1a0885d44efde39"
+  },
+  "entry_url": "mf://manifest?app=miniapp-dice-game",
+  "media": {
+    "icon": "/miniapp-assets/dice-game/logo.webp",
+    "banner": "/miniapp-assets/dice-game/banner.webp"
+  },
+  "permissions": {
+    "payments": false,
+    "randomness": false
+  },
+  "frontend_spec": {
+    "layout": "default",
+    "operation_panel": {
+      "title": "Free Dice Practice",
+      "subtitle": "Choose a face and throw locally. Wallet-funded rolls remain disabled until the Neo N3 settlement deployment passes the compatibility gate.",
+      "operations": []
+    }
+  },
+  "operations": [],
+  "integration": {
+    "news_integration": true,
+    "reviews_enabled": true,
+    "forum_enabled": false,
+    "activity_feed": false,
+    "stats_display": []
+  },
+  "docs_url": "https://docs.r3e.network/dice-game",
+  "manifest": {
+    "contracts": {
+      "neo-n3-mainnet": "0xef1fac0247ccbad5810e3fcfa1a0885d44efde39",
+      "neo-n3-testnet": "0xef1fac0247ccbad5810e3fcfa1a0885d44efde39"
+    },
+    "contract_domains": {
+      "neo-n3-mainnet": "dicegame.miniapp.neo"
+    },
+    "platform": {
+      "analytics": true,
+      "comments": true,
+      "ratings": true,
+      "transactions": false
+    },
+    "permissions": [
+      "read:blockchain"
+    ],
+    "operation_panel": {
+      "operations": []
+    }
+  }
+}
