@@ -313,11 +313,9 @@ describe("sudoku Phaser playarea", () => {
   });
 
   it("uses compact mobile canvas sizing instead of the old stretched lobby", () => {
-    const sharedRoot = process.cwd().endsWith("/apps/shared")
-      ? process.cwd()
-      : resolve(process.cwd(), "node_modules/@r3e-network/neo-miniapp-shared");
-    const styles = readFileSync(resolve(sharedRoot, "../sudoku/src/PlayArea.scss"), "utf8");
-    const scene = readFileSync(resolve(sharedRoot, "../sudoku/src/scenes/SudokuScene.ts"), "utf8");
+    const sharedRoot = resolve(process.cwd(), "apps/shared");
+    const styles = readFileSync(resolve(process.cwd(), "apps/sudoku/src/PlayArea.scss"), "utf8");
+    const scene = readFileSync(resolve(process.cwd(), "apps/sudoku/src/scenes/SudokuScene.ts"), "utf8");
 
     expect(styles).toContain("--phaser-mobile-height-ratio: 1.62");
     expect(styles).toContain("--phaser-mobile-bottom-reserve: 72px");

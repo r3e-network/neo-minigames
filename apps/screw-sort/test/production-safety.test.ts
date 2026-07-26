@@ -78,7 +78,7 @@ describe("screw-sort production safety", () => {
   it("keeps HUD metrics above the DOM action rail and warms the real mount root", () => {
     const scene = read("src/scenes/ScrewSortScene.ts");
     const styles = read("src/PlayArea.scss");
-    const sharedRoot = read("../shared/react/MiniAppRoot.tsx");
+    const sharedRoot = read("../../node_modules/@r3e-network/neo-miniapp-shared/react/MiniAppRoot.tsx");
     const rootRule = styles.match(
       /\.standalone-dapp-root\.standalone-dapp-root\s*\{(?<body>[^}]*)\}/,
     )?.groups?.body;

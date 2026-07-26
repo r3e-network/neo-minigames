@@ -1,3 +1,4 @@
+import { realpathSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vitest/config";
@@ -18,6 +19,39 @@ export default defineConfig({
       "@framework": resolve(repoRoot, "node_modules/@r3e-network/neo-miniapp-framework"),
       "@shared": resolve(repoRoot, "node_modules/@r3e-network/neo-miniapp-shared"),
       phaser: resolve(repoRoot, "node_modules/phaser/dist/phaser.esm.js"),
+      // React must resolve to exactly one copy. The SDK packages declare react
+      // as a peer, but an installer that gives them their own nested copy makes
+      // components render against a different React than the test does, and
+      // every hook then fails with "Cannot read properties of null (reading
+      // 'useCallback')" - the dispatcher of the copy that is not rendering.
+      react: resolve(repoRoot, "node_modules/react"),
+      "react-dom": resolve(repoRoot, "node_modules/react-dom"),
+      "react/jsx-runtime": resolve(repoRoot, "node_modules/react/jsx-runtime.js"),
+      "react/jsx-dev-runtime": resolve(repoRoot, "node_modules/react/jsx-dev-runtime.js"),
+    },
+    dedupe: ["react", "react-dom"],
+  },
+  server: {
+    fs: {
+      // The SDK packages can resolve outside the project root (a workspace link
+      // during development), and Vite's strict fs guard would deny reading their
+      // assets.
+      // realpath matters: during development the SDK packages are workspace
+      // links, so the file Vite actually opens lives outside node_modules.
+      allow: [
+        repoRoot,
+        resolve(repoRoot, "node_modules"),
+        ...["@r3e-network/neo-miniapp-framework", "@r3e-network/neo-miniapp-shared"].flatMap(
+          (pkg) => {
+            const linked = resolve(repoRoot, "node_modules", pkg);
+            try {
+              return [linked, realpathSync(linked)];
+            } catch {
+              return [linked];
+            }
+          },
+        ),
+      ],
     },
   },
   test: {

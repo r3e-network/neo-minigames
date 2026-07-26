@@ -173,8 +173,8 @@ describe("Daily Check-in ritual-first product surface", () => {
 
 describe("Daily Check-in visual production locks", () => {
   it("keeps a bright high-contrast responsive ritual with restrained actions", () => {
-    const styles = readFileSync(`${process.cwd()}/../daily-checkin/src/PlayArea.scss`, "utf8");
-    const source = readFileSync(`${process.cwd()}/../daily-checkin/src/PlayArea.tsx`, "utf8");
+    const styles = readFileSync(`${process.cwd()}/apps/daily-checkin/src/PlayArea.scss`, "utf8");
+    const source = readFileSync(`${process.cwd()}/apps/daily-checkin/src/PlayArea.tsx`, "utf8");
 
     expect(styles).toMatch(/\.dci-ritual\s*\{[\s\S]*?background:\s*transparent/);
     expect(styles).toMatch(/\.dci-ritual__layout\s*\{[\s\S]*?grid-template-columns:/);

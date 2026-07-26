@@ -35,7 +35,7 @@ describe("gasbox E2E lifecycle", () => {
   it("advertises the live V2 contract honestly without stale PlatformGame or VRF claims", async () => {
     const { readFile } = await import("node:fs/promises");
     const manifest = JSON.parse(
-      await readFile(`${process.cwd()}/../gasbox/neo-manifest.json`, "utf8"),
+      await readFile(`${process.cwd()}/apps/gasbox/neo-manifest.json`, "utf8"),
     ) as {
       contracts: Record<string, string>;
       features: { stateless: boolean };

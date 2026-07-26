@@ -3,9 +3,7 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 function sharedRoot(): string {
-  return process.cwd().endsWith("/apps/shared")
-    ? process.cwd()
-    : resolve(process.cwd(), "node_modules/@r3e-network/neo-miniapp-shared");
+  return resolve(process.cwd(), "apps/shared");
 }
 
 describe("sudoku production PlayArea compatibility", () => {
@@ -53,7 +51,7 @@ describe("sudoku production PlayArea compatibility", () => {
   });
 
   it("ships the complete original WebP gameplay set with provenance", () => {
-    const appRoot = resolve(sharedRoot(), "../sudoku");
+    const appRoot = resolve(process.cwd(), "apps/sudoku");
     const assets = [
       "paper-grid.webp",
       "art/cell-given.webp",
@@ -86,7 +84,7 @@ describe("sudoku production PlayArea compatibility", () => {
   });
 
   it("publishes local play only while retaining read-only contract provenance", () => {
-    const appRoot = resolve(sharedRoot(), "../sudoku");
+    const appRoot = resolve(process.cwd(), "apps/sudoku");
     const publicManifest = JSON.parse(
       readFileSync(resolve(appRoot, "neo-manifest.json"), "utf8"),
     ) as {

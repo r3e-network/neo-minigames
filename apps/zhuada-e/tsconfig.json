@@ -3,8 +3,8 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"],
-      "@framework/*": ["../../node_modules/@r3e-network/neo-miniapp-framework/*"],
-      "@shared/*": ["../../node_modules/@r3e-network/neo-miniapp-shared/*"]
+      "@framework/*": ["../../framework/*"],
+      "@shared/*": ["../shared/*"]
     },
     "types": ["vite/client"]
   },

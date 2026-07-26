@@ -227,7 +227,7 @@ describe("GasBox PlayArea (v2)", () => {
   });
   it("has reduced-motion, capsule animation, and clean stage coverage", () => {
     const fs = require("node:fs");
-    const s = fs.readFileSync(`${process.cwd()}/../gasbox/src/PlayArea.scss`, "utf8");
+    const s = fs.readFileSync(`${process.cwd()}/apps/gasbox/src/PlayArea.scss`, "utf8");
     expect(s).toMatch(/prefers-reduced-motion/);
     expect(s).toMatch(/0\.001ms/);
     expect(s).toMatch(/gasbox-capsule-roll/);

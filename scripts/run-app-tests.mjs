@@ -42,7 +42,13 @@ function findAppsWithTests() {
 
 function runSuite(app) {
   return new Promise((resolve) => {
-    const child = spawn("npm", ["test", "--silent"], { cwd: app.dir, stdio: ["ignore", "pipe", "pipe"] });
+    // --passWithNoTests: some apps declare a test script while their suites
+    // live in the repo-level tests/unit directory, and an empty vitest run
+    // exits non-zero, which is not a failure here.
+    const child = spawn("npm", ["test", "--silent", "--", "--passWithNoTests"], {
+      cwd: app.dir,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
     const chunks = [];
     child.stdout.on("data", (d) => chunks.push(d));
     child.stderr.on("data", (d) => chunks.push(d));

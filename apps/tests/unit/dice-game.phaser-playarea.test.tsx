@@ -266,19 +266,17 @@ describe("dice-game Phaser playarea", () => {
   });
 
   it("keeps Phaser canvas, HUD, and secondary controls inside the full-height dice table", () => {
-    const sharedRoot = process.cwd().endsWith("/apps/shared")
-      ? process.cwd()
-      : resolve(process.cwd(), "node_modules/@r3e-network/neo-miniapp-shared");
+    const sharedRoot = resolve(process.cwd(), "apps/shared");
     const styles = readFileSync(
-      resolve(sharedRoot, "../dice-game/src/PlayArea.scss"),
+      resolve(process.cwd(), "apps/dice-game/src/PlayArea.scss"),
       "utf8",
     );
     const wrapper = readFileSync(
-      resolve(sharedRoot, "../dice-game/src/PhaserPlayArea.tsx"),
+      resolve(process.cwd(), "apps/dice-game/src/PhaserPlayArea.tsx"),
       "utf8",
     );
     const scene = readFileSync(
-      resolve(sharedRoot, "../dice-game/src/scenes/DiceScene.ts"),
+      resolve(process.cwd(), "apps/dice-game/src/scenes/DiceScene.ts"),
       "utf8",
     );
 
