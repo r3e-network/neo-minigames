@@ -20,3 +20,14 @@ describe("Production data guardrails", () => {
     expect(tarotSource).not.toContain("using local preview");
   });
 });
+
+describe("LastSurvivor standalone entry", () => {
+  it("does not expose lifecycle settlement as a standalone DApp action", () => {
+    const standaloneEntry = fs.readFileSync(
+      path.join(repoRoot, "apps/last-survivor/src/main.tsx"),
+      "utf8",
+    );
+
+    expect(standaloneEntry).not.toContain('registerAction("claimPrize"');
+  });
+});
