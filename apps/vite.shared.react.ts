@@ -73,7 +73,16 @@ export function createReactAppConfig(appDir: string, options: ReactAppConfigOpti
   const nobleHashesSha512Shim = path.resolve(sharedDir, "shims/noble-hashes-sha512.js");
   const nobleCurvesAbstractUtilsShim = path.resolve(sharedDir, "shims/noble-curves-abstract-utils.js");
   const nobleCurvesP256Shim = path.resolve(sharedDir, "shims/noble-curves-p256.js");
-  const polyfillShimsRoot = path.resolve(appDir, "node_modules/vite-plugin-node-polyfills/shims");
+  // Look for the shims where the package actually installed. Not appDir alone:
+  // dependencies hoist to the repo root here, so appDir/node_modules does not
+  // exist and every alias below was silently skipped - leaving a bare
+  // "vite-plugin-node-polyfills/shims/process" specifier that Rollup could not
+  // resolve once the importer lived under a dependency's own node_modules.
+  // Probed rather than require.resolve'd: the package does not export
+  // ./package.json, so resolution through its exports map throws.
+  const polyfillShimsRoot = [appDir, rootDir]
+    .map((base) => path.resolve(base, "node_modules/vite-plugin-node-polyfills/shims"))
+    .find((candidate) => fs.existsSync(candidate)) ?? path.resolve(appDir, "node_modules/vite-plugin-node-polyfills/shims");
   const polyfillAliases: { find: string; replacement: string }[] = [];
 
   const addPolyfillAlias = (find: string, relativePath: string) => {
