@@ -536,4 +536,35 @@ describe("on-chain-tarot Phaser playarea", () => {
     expect(manifest).toContain("walletRequired: false");
     expect(manifest).toContain("payments: false");
   });
+
+  // Residue of the platform monorepo's
+  // deploy/scripts/lib/on_chain_tarot_frontend_structure.test.mjs. The rest of
+  // that file is superseded by the assertions above; these four guards had no
+  // equivalent here and would otherwise be lost when apps/ leaves the platform.
+  it("keeps art real and motion/typography restrained", () => {
+    const root = resolve(__dirname, "../..");
+    const scene = readFileSync(resolve(root, "on-chain-tarot/src/scenes/TarotScene.ts"), "utf8");
+    const styles = readFileSync(resolve(root, "on-chain-tarot/src/PlayArea.scss"), "utf8");
+
+    // Card faces, intent tokens and table art must stay real loaded assets;
+    // generateTexture is allowed only for the runtime FX_* helper textures.
+    const generatedTextureKeys = [...scene.matchAll(/generateTexture\(\s*([A-Za-z0-9_]+)/g)].map(
+      (match) => match[1],
+    );
+    expect(
+      generatedTextureKeys.filter((key) => !key!.startsWith("FX_")),
+      "generateTexture may only build FX_* helper textures, never card/table art",
+    ).toEqual([]);
+    expect(scene).toMatch(/private playReadingCelebration\(\)/);
+    expect(scene).toMatch(/private playReadingCelebration\(\)[^{]*\{\s*if \(this\.reducedMotion\) return/);
+
+    expect(styles).toMatch(/@media \(prefers-reduced-motion: reduce\)/);
+    expect(styles).not.toMatch(/radial-gradient|backdrop-filter/);
+    expect(styles).not.toMatch(/font-size:\s*clamp\(/);
+    const tracking = [...styles.matchAll(/letter-spacing:\s*([^;]+);/g)].map((match) =>
+      match[1]!.trim(),
+    );
+    expect(tracking.length, "tarot styles should pin readable tracking").toBeGreaterThan(0);
+    expect(tracking.filter((value) => value !== "0")).toEqual([]);
+  });
 });

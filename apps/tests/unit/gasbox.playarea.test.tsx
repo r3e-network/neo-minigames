@@ -2,6 +2,12 @@ import React from "react";
 import { cleanup, fireEvent, render, waitFor } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { createObservable, type ObservableState } from "@shared/react/context";
+import {
+  assertAssets,
+  assertMessageKeys,
+  assertModernTypography,
+  read,
+} from "../test-utils/frontend-structure";
 import PlayArea from "../../gasbox/src/PlayArea";
 (globalThis as typeof globalThis & { React: typeof React }).React = React;
 afterEach(() => cleanup());
@@ -241,5 +247,23 @@ describe("GasBox PlayArea (v2)", () => {
     expect(s).toMatch(/@media \(max-width:\s*720px\)[\s\S]*gasbox-scene__status\s*\{[\s\S]*-webkit-line-clamp:\s*2/);
     expect(s).toMatch(/@media \(max-width:\s*720px\)[\s\S]*gasbox-play-area \.mx2-score\s*\{[\s\S]*display:\s*none/);
     expect(s).toMatch(/@media \(max-width:\s*720px\)[\s\S]*gasbox-play-area \.mx2-action-rail__row \.mx2-btn--primary\s*\{[\s\S]*flex:\s*0 0 204px/);
+  });
+
+  // Residue of the platform monorepo's
+  // deploy/scripts/lib/gasbox_frontend_structure.test.mjs. Its PlayStage, class,
+  // dispatch and reduced-motion assertions are superseded by the rendering tests
+  // above; the typography pin, the shipped capsule art and the message keys had
+  // no equivalent here.
+  it("pins modern typography and ships the capsule art and copy it renders", () => {
+    assertModernTypography(read("apps/gasbox/src/PlayArea.scss"), "GasBox");
+    assertAssets([
+      "apps/gasbox/public/gasbox-capsule-machine.webp",
+      "apps/gasbox/public/gasbox-prize-capsule.webp",
+    ]);
+    assertMessageKeys(
+      read("apps/gasbox/src/locale/messages.ts"),
+      ["title", "docSubtitle", "allMachines", "tapToPlay", "openStudio", "create"],
+      "GasBox",
+    );
   });
 });
