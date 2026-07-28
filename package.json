@@ -2,7 +2,7 @@
   "name": "@r3e-network/neo-minigames",
   "version": "1.0.0",
   "private": true,
-  "description": "Neo MiniGames \u2014 app sources, contracts, and the CDN publish pipeline",
+  "description": "Neo MiniGames — app sources, contracts, and the CDN publish pipeline",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -16,7 +16,8 @@
     "publish:cdn:dry-run": "node scripts/publish-bundles-r2.mjs --dry-run",
     "check:devpack-drift": "node scripts/check-devpack-drift.mjs",
     "build:contracts": "bash contracts/build.sh",
-    "test:apps": "node scripts/run-app-tests.mjs"
+    "test:apps": "node scripts/run-app-tests.mjs",
+    "art:gomoku": "node scripts/generate-gomoku-art.mjs"
   },
   "dependencies": {
     "@r3e-network/neo-miniapp-framework": "^2.2.2",
