@@ -6,7 +6,7 @@
  * depend on. That means the DevPack is vendored here, and a vendored copy can
  * drift from the platform's canonical one.
  *
- * This compares every vendored file against neo-miniapps-platform@master and
+ * This compares every vendored file against neo-os-web@master and
  * fails on any difference, so drift surfaces in CI instead of at deploy time.
  */
 import fs from "node:fs/promises";
@@ -18,7 +18,7 @@ const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."
 const devPackDir = path.join(repoRoot, "contracts", "MiniApp.DevPack");
 const RAW_BASE =
   process.env.DEVPACK_UPSTREAM_BASE ||
-  "https://raw.githubusercontent.com/r3e-network/neo-miniapps-platform/master/contracts/MiniApp.DevPack";
+  "https://raw.githubusercontent.com/r3e-network/neo-os-web/master/contracts/MiniApp.DevPack";
 
 function sha256(buffer) {
   return crypto.createHash("sha256").update(buffer).digest("hex");

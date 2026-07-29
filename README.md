@@ -2,7 +2,7 @@
 
 Neo MiniGames — app sources, their contracts, and the pipeline that publishes
 built bundles to the CDN. Split out of
-[neo-miniapps-platform](https://github.com/r3e-network/neo-miniapps-platform),
+[neo-os-web](https://github.com/r3e-network/neo-os-web),
 which now holds only platform code and loads these apps from the CDN at runtime.
 
 ## Layout

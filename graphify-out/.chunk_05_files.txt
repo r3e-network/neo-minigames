@@ -1,0 +1,13 @@
+/Users/jinghuiliao/git/r3e/neo-minigames/apps/sudoku/public/art/ATTRIBUTION.md
+/Users/jinghuiliao/git/r3e/neo-minigames/apps/zhuada-e/ASSET_PROVENANCE.md
+/Users/jinghuiliao/git/r3e/neo-minigames/apps/zhuada-e/PRODUCTION-READINESS.md
+/Users/jinghuiliao/git/r3e/neo-minigames/apps/zhuada-e/README.md
+/Users/jinghuiliao/git/r3e/neo-minigames/apps/zhuada-e/REFERENCE-IMPLEMENTATION-COMPLIANCE.md
+/Users/jinghuiliao/git/r3e/neo-minigames/apps/zhuada-e/REFERENCE-VIDEO-AUDIT.md
+/Users/jinghuiliao/git/r3e/neo-minigames/apps/zhuada-e/SIMULATOR-QA.md
+/Users/jinghuiliao/git/r3e/neo-minigames/apps/zhuada-e/THIRD_PARTY_NOTICES.md
+/Users/jinghuiliao/git/r3e/neo-minigames/apps/zhuada-e/art-src/SOURCE_MANIFEST.md
+/Users/jinghuiliao/git/r3e/neo-minigames/apps/zhuada-e/design-qa.md
+/Users/jinghuiliao/git/r3e/neo-minigames/apps/zhuada-e/index.html
+/Users/jinghuiliao/git/r3e/neo-minigames/apps/zhuada-e/public/THIRD_PARTY_NOTICES.txt
+/Users/jinghuiliao/git/r3e/neo-minigames/contracts/MiniAppTarotVrf/README.md

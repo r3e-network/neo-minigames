@@ -1,4 +1,4 @@
-import sharp from "/Users/jinghuiliao/git/r3e/neo-miniapps-platform/node_modules/sharp/lib/index.js";
+import sharp from "/Users/jinghuiliao/git/r3e/neo-os-web/node_modules/sharp/lib/index.js";
 
 // Prize wheel for the lucky pool.
 // The real reward is a RANDOM 0-50 GAS drawn by the backend (see messages.ts
@@ -103,6 +103,6 @@ svg += `</svg>`;
 sharp(Buffer.from(svg))
   .resize(SIZE, SIZE)
   .webp({ quality: 95, alphaQuality: 98 })
-  .toFile("/Users/jinghuiliao/git/r3e/neo-miniapps-platform/apps/gas-lucky-pool/public/wheel.webp")
+  .toFile("/Users/jinghuiliao/git/r3e/neo-os-web/apps/gas-lucky-pool/public/wheel.webp")
   .then(() => console.log("OK: wheel.webp regenerated with prize labels"))
   .catch((e) => console.error("FAIL:", e));

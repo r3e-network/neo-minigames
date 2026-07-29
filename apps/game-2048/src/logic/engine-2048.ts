@@ -6,7 +6,7 @@
  * stream is generated inside the Morpheus enclave and revealed one spawn per
  * committed move — the client can never look ahead. The enclave runs the
  * authoritative twin of applyMove; keep the semantics in lockstep with
- * workers/nitro-worker/src/game/engines/game2048.js in neo-morpheus-oracle.
+ * workers/nitro-worker/src/game/engines/game2048.js in neo-os.
  *
  * Board cells hold EXPONENTS (0 = empty, e = tile 2^e), row-major 4x4.
  * Moves: 0 = up, 1 = right, 2 = down, 3 = left. A move is valid only if it

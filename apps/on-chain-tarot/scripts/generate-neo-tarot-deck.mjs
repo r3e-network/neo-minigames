@@ -280,7 +280,7 @@ async function downloadFile(url, filename) {
     "--max-time",
     "90",
     "--user-agent",
-    "neo-miniapps-platform tarot asset importer",
+    "neo-os-web tarot asset importer",
     "--output",
     output,
     url,

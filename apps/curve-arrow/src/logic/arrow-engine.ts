@@ -9,7 +9,7 @@
  * math the enclave replays authoritatively at finalize.
  *
  * Determinism contract (must stay byte-identical to the oracle engine port in
- * neo-morpheus-oracle/workers/nitro-worker/src/game/engines/arrow.js):
+ * neo-os/workers/nitro-worker/src/game/engines/arrow.js):
  * - positions and velocities are Q8 integers; world coords = value >> 8
  * - a held tick turns UP:   vx' = (vx*TURN_COS + vy*TURN_SIN) >> 12,
  *                           vy' = (-vx*TURN_SIN + vy*TURN_COS) >> 12

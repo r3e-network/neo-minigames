@@ -29,7 +29,7 @@ import type { LiveRun, RunStorage } from "../../game-2048/src/logic/run-store";
 
 /**
  * The spawn stream lives in the Morpheus enclave (see the worker suite in
- * neo-morpheus-oracle for the stream's own golden vectors). The client half
+ * neo-os for the stream's own golden vectors). The client half
  * tested here is the DETERMINISTIC part: slide/merge mechanics plus the
  * fold that rebuilds a board from TEE-confirmed (move, spawn) pairs — that
  * fold is what makes a reload land on exactly the board the enclave holds.
