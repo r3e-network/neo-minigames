@@ -17,7 +17,8 @@
     "check:devpack-drift": "node scripts/check-devpack-drift.mjs",
     "build:contracts": "bash contracts/build.sh",
     "test:apps": "node scripts/run-app-tests.mjs",
-    "art:gomoku": "node scripts/generate-gomoku-art.mjs"
+    "art:gomoku": "node scripts/generate-gomoku-art.mjs",
+    "build:contracts:legacy-clones": "BUILD_LEGACY_CLONES=1 npm run -s build:contracts"
   },
   "dependencies": {
     "@r3e-network/neo-miniapp-framework": "^2.2.2",
